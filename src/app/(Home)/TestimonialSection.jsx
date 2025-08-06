@@ -118,7 +118,6 @@ export default function TestimonialsSection({ id }) {
             modules={[Navigation, Pagination, A11y, Autoplay]}
             spaceBetween={20}
             slidesPerView={1}
-            loop={true}
             pagination={false}
             navigation={false} // <--- IMPORTANT
             onSwiper={(swiper) => {
