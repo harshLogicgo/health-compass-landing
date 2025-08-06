@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .play-animation {
+    animation: play-animation 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes play-animation {
+    0% {
+      scale: 0.97;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1050;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .backdrop.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .backdrop {
+    background: rgba(0, 0, 0, 0.614);
+  }
+
+  .videoPlayer {
+    background: rgba(0, 0, 0, 0.763);
+  }
+
+  .videoPlayer .video {
+    margin: 0 15px;
+    max-width: 1000px;
+    width: 100%;
+    aspect-ratio: 5.3/3;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+  }
+
+  .videoPlayer.hidden .video {
+    transform: scale(0.95);
+  }
+
+  .banner-content {
+    @apply sm:max-h-[400px] lg:max-h-[650px] max-w-[400px] md:max-w-full lg:h-[72vh] lg:min-h-[500px]  aspect-[10/11] bg-black/10 backdrop-blur-[44px] relative z-[1];
+    /* @apply max-w-[450px] md:max-w-[600px] w-full  aspect-[10/11] bg-black/10 backdrop-blur-[44px] relative z-[1]; */
+  }
+
+  .supplement-image {
+    @apply max-w-[844px] aspect-[844/563] w-full bg-black/10 backdrop-blur-[44px];
+  }
+}

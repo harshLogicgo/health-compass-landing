@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 180 100% 30%;
+    --primary-light: 180 100% 35%;
+    --secondary: 0 0% 100%;
+    --text-primary: 0 0% 15%;
+    --text-secondary: 0 0% 30%;
+    --text-light: 0 0% 100%;
+    --dark-blue: 200 100% 10%;
+    --gray-blue: #5d6481;
+  }
+}
+
+/* styles/globals.css */
+
+@font-face {
+  font-family: "Alliance";
+  src: url("/fonts/Degarism Studio - Alliance No.1 Light.otf") format("woff2");
+  src: url("/fonts/Degarism Studio - Alliance No.2 Light.otf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mayfest";
+  src: url("/fonts/Mayfest_Regular - Demo.ttf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer components {
+  /* Common text utilities */
+
+  * {
+    @apply m-0 p-0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body{
+    @apply bg-spring-wood
+  }
+
+  .main-container {
+    @apply max-w-[1440px] mx-auto px-4;
+  }
+
+  @media (max-width: 1500) {
+    .main-container {
+      max-width: 1300; 
+    }
+  }
+
+  @media (max-width: 1400) {
+    .main-container {
+      max-width: 1200; 
+    }
+  }
+
+  @media (max-width: 1300) {
+    .main-container {
+      max-width: 1100; 
+    }
+  }
+
+  @media (max-width: 1200) {
+    .main-container {
+      max-width: 1000; 
+    }
+  }
+
+  @media (max-width: 1000) {
+    .main-container {
+      max-width: 900; 
+    }
+  }
+
+  @media (max-width: 900) {
+    .main-container {
+      max-width: 800; 
+    }
+  }
+
+  .backdrop-blur-xs {
+    --tw-backdrop-blur: blur(2px);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+      var(--tw-backdrop-sepia);
+  }
+
+  .banner-heading {
+    @apply font-mayfest text-[42px] sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-wide text-white;
+    line-height: 1.2;
+  }
+
+  .banner-subheading {
+    @apply font-alliance text-[21px] mb-2 md:text-xl lg:text-[22px] font-bold tracking-wide text-white;
+  }
+
+  .banner-paragraph {
+    @apply text-[14px] md:text-base lg:text-[16px] font-semibold text-white max-w-xl;
+  }
+
+  .text-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-white;
+  }
+
+  .text-subheading {
+    @apply text-lg md:text-xl lg:text-2xl font-light tracking-wide text-white mb-2;
+  }
+
+  .text-paragraph {
+    @apply text-sm md:text-base lg:text-lg font-medium text-white max-w-xl;
+  }
+
+  /* Section headings */
+  .section-title {
+    @apply text-3xl sm:text-[38px] lg:text-[44px] font-semibold text-text-primary mb-2;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    @apply text-sm sm:text-base lg:text-lg text-text-secondary font-semibold mb-4 text-gray-blue;
+  }
+
+  /* Button utilities */
+  .btn {
+    @apply px-7 py-2 rounded-full text-sm font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white;
+  }
+
+  .btn-outline {
+    @apply btn border border-white text-white hover:bg-white/10;
+  }
+
+  .btn-teal {
+    @apply btn bg-primary text-white hover:bg-light-primary rounded-lg py-3;
+    /* @apply btn bg-primary text-white hover:bg-primary-light rounded-lg py-3; */
+    font-size: 16px;
+  }
+
+  /* Navigation utilities */
+  .nav-link {
+    @apply text-sm font-medium hover:text-primary-light transition-colors duration-200;
+  }
+
+  /* Feature list */
+  .feature-item {
+    @apply flex items-start space-x-2 mb-3;
+  }
+
+  .feature-icon {
+    @apply text-primary flex-shrink-0 mt-0.5;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply py-8 px-4;
+  }
+
+  .section-p-y {
+    @apply py-10 sm:py-16 px-4;
+  }
+
+  .section-p-t {
+    @apply pt-10 sm:pt-16 px-4;
+  }
+
+  .section-p-b {
+    @apply pb-10 sm:pb-16 px-4;
+  }
+
+  /* Card styles */
+  .info-card {
+    @apply bg-white rounded-lg shadow-md p-6 relative overflow-hidden;
+  }
+
+  /* Card utilities */
+  .article-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .article-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  .article-title {
+    @apply font-medium text-lg text-text-primary mb-2;
+  }
+
+  .article-meta {
+    @apply text-xs text-text-secondary flex justify-between items-center mt-3;
+  }
+
+  /* Testimonial utilities */
+  .testimonial-card {
+    @apply bg-white rounded-lg p-9 relative transition-all duration-300 hover:shadow-lg;
+    box-shadow: 0px 10px 20px 0px #00000014;
+  }
+
+  .testimonial-avatar {
+    @apply w-[60px] h-[60px] rounded-full object-cover;
+  }
+
+  .star-rating {
+    @apply flex text-yellow-400 my-1;
+  }
+
+  /* Section headers */
+  .section-header {
+    @apply flex justify-between items-center mb-8;
+  }
+
+  /* Carousel navigation */
+  .carousel-nav {
+    @apply flex space-x-2;
+  }
+
+  .carousel-button {
+    @apply w-8 h-8 flex items-center justify-center rounded-full bg-white border border-gray-200 text-primary hover:bg-primary hover:text-white transition-colors;
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    @apply bg-dark-teal-blue text-white rounded-lg overflow-hidden border border-primary/20 max-w-[1180px] mx-auto;
+  }
+
+  /* Footer styles */
+  .footer {
+    @apply bg-dark-teal-blue text-white py-12;
+  }
+
+  .footer-heading {
+    @apply font-medium text-lg mb-4;
+  }
+
+  .footer-link {
+    @apply text-sm text-gray-300 hover:text-white transition-colors duration-200 block mb-2;
+  }
+
+  .footer-social {
+    @apply w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors duration-200;
+  }
+
+  /* Swiper custom styles */
+  .news-slider,
+  .testimonials-slider {
+    /* @apply px-4 md:px-8; */
+  }
+
+  /* Custom pagination bullets */
+  .swiper-pagination-bullet {
+    @apply bg-gray-300 opacity-70;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply bg-primary opacity-100;
+  }
+
+  @screen sm {
+    .section-container {
+      @apply py-[70px] px-4;
+    }
+  }
+}
