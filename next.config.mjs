@@ -8,6 +8,7 @@ const nextConfig = {
       // add more here
     ],
   },
+  output: "export",
 };
 
 export default nextConfig;

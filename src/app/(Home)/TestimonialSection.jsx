@@ -19,7 +19,7 @@ const testimonials = [
     text: "Health Compass is new, but already changing lives. Verified testimonials are on their way.",
   },
   {
-    text: "ou’ll hear from real people soon. Until then, explore and discover the vision.",
+    text: "You’ll hear from real people soon. Until then, explore and discover the vision.",
   },
 ];
 

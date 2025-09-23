@@ -79,19 +79,19 @@ export const footerData = [
 
 export const socialData = [
   {
-    path: "#",
-    icon: Facebook,
-  },
-  {
-    path: "#",
+    path: "https://www.instagram.com/ourhealthcompass/",
     icon: Instagram,
   },
   {
-    path: "#",
-    icon: Linkedin,
+    path: "https://www.facebook.com/ourhealthcompass",
+    icon: Facebook,
   },
   {
-    path: "#",
-    icon: Youtube,
+    path: "https://www.linkedin.com/in/daniel-sheehan-hc/ ",
+    icon: Linkedin,
   },
+  // {
+  //   path: "https://www.youtube.com/@gohealthcompass",
+  //   icon: Youtube,
+  // },
 ];

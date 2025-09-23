@@ -7,7 +7,6 @@ import { createMetadata } from "@/helpers/commonHelpers";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AOSInitializer from "@/components/AOSInitializer";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +30,7 @@ export const generateMetadata = async () => {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
@@ -61,7 +60,11 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=698547848154391&ev=PageView&noscript=1"
           />
         </noscript>
-      </Head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

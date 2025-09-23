@@ -52,20 +52,46 @@ export default function Footer() {
         <div className="border-t border-white/30 my-4" />
 
         {/* Bottom sical media icons */}
-        <div className="flex flex-row gap-3 mt-4 justify-end">
-          {socialData.map((item, index) => {
-            const Icon = item.icon;
-            const path = item.path;
-            return (
-              <a
-                key={index}
-                href={path}
-                className="hover:text-teal-400 transition text-gray-200"
-              >
-                <Icon size={22} />
-              </a>
-            );
-          })}
+        <div className="flex items-center mt-4 gap-4 justify-between">
+          <span className="text-sm">© {new Date().getFullYear()} Health Compass, LLC All rights reserved.
+          </span>
+          <div className="flex flex-row gap-3  justify-end items-center">
+            {socialData.map((item, index) => {
+              const Icon = item.icon;
+              const path = item.path;
+              return (
+                <a
+                  key={index}
+                  href={path}
+                  target="_blank"
+                  className="hover:text-teal-400 transition text-gray-200"
+                >
+                  <Icon size={22} />
+                </a>
+              );
+            })}
+            <a
+              href='https://tiktok.com/@gohealthcompass'
+              target="_blank"
+              className="hover:text-teal-400 transition text-gray-200"
+            >
+              <i className="ri-tiktok-line text-xl"></i>
+            </a>
+            <a
+              href='https://www.youtube.com/@gohealthcompass'
+              target="_blank"
+              className="hover:text-teal-400 transition text-gray-200"
+            >
+              <Youtube size={22} />
+            </a>
+            <a
+              href=' https://x.com/GoHealthCompass '
+              target="_blank"
+              className="hover:text-teal-400 transition text-gray-200"
+            >
+              <i className="ri-twitter-x-line text-lg"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
