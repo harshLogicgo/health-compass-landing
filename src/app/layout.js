@@ -27,10 +27,28 @@ export const generateMetadata = async () => {
   });
 };
 
+const GA_MEASUREMENT_ID = "G-YHEZJ540ZY";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics 4 */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        ></script>
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}', {
+            page_path: window.location.pathname,
+          });
+        `}
+        </Script>
+
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
