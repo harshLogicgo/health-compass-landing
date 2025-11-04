@@ -19,6 +19,17 @@ const Header = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollTimeout = useRef(null);
 
+  useEffect(() => {
+    fetch("/api/pinterest-capi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_name: "page_visit",
+      }),
+    });
+  }, []);
+
+
   const { sectionIds, taglines } = useMemo(() => {
     if (isMobile) {
       return {
@@ -62,7 +73,7 @@ const Header = () => {
   const isActive = (path) => pathname.includes(path);
 
   useEffect(() => {
-    if(window.scrollY > 40){
+    if (window.scrollY > 40) {
       setIsScrolled(true)
     }
     const handleScroll = () => {
@@ -78,7 +89,7 @@ const Header = () => {
       if (scrollTimeout.current) {
         clearTimeout(scrollTimeout.current);
       }
-      
+
       scrollTimeout.current = setTimeout(() => {
         const scrollPosition = window.scrollY + window.innerHeight / 2;
         const isDesktop = window.innerWidth >= 768; // Match your md breakpoint
@@ -142,18 +153,16 @@ const Header = () => {
         </div>
       </div>
       <header
-        className={`w-full ${
-          isScrolled ? "top-[0px]" : "top-[0px]"
-        } sticky bg-transparent z-[50] transition-all`}
+        className={`w-full ${isScrolled ? "top-[0px]" : "top-[0px]"
+          } sticky bg-transparent z-[50] transition-all`}
       >
         <nav
-          className={`relative w-full z-[50] main-container transition-colors duration-300 rounded-b-xl ${
-            isScrolled ? "bg-white shadow-md" : "bg-transparent"
-          }`}
+          className={`relative w-full z-[50] main-container transition-colors duration-300 rounded-b-xl ${isScrolled ? "bg-white shadow-md" : "bg-transparent"
+            }`}
         >
           <div className="relative">
             <div className="py-3 md:py-4">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-center items-center ">
                 <Link href="/" className="flex items-center relative">
                   <img
                     src={Images.logo3}
